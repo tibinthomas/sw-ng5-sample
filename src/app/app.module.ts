@@ -7,6 +7,9 @@ import { environment } from '../environments/environment';
 
 
 import { AppComponent } from './app.component';
+import { LogUpdateService } from './sw-shared-services/log-update.service';
+import { CheckForUpdateService } from './sw-shared-services/check-for-update.service';
+import { PromptUpdateService } from './sw-shared-services/prompt-update.service';
 
 
 @NgModule({
@@ -17,7 +20,7 @@ import { AppComponent } from './app.component';
     BrowserModule,
     ServiceWorkerModule.register('/ngsw-worker.js', {enabled: environment.production})
   ],
-  providers: [],
+  providers: [LogUpdateService, CheckForUpdateService, PromptUpdateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

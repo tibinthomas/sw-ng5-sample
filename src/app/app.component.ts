@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { CheckForUpdateService } from './sw-shared-services/check-for-update.service';
+import { Component, OnInit } from '@angular/core';
+import { LogUpdateService } from './sw-shared-services/log-update.service';
+import { PromptUpdateService } from './sw-shared-services/prompt-update.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  constructor(// private swLogUpdate: LogUpdateService,
+               private swCheckUpdate: CheckForUpdateService,
+              // private swPromptUpdate: PromptUpdateService
+            ) {}
+  title = 'App v1';
 }

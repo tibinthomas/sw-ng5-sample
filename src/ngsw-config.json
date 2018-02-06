@@ -1,5 +1,5 @@
 {
-  "appData": "Hi, ver 2.2 is now available",
+  "appData": "Hi, ver 3 is now available",
     "index": "/index.html",
 
 
@@ -23,7 +23,7 @@
       "updateMode": "prefetch",
       "resources": {
         "files": [
-          "/assets/**"
+          "/assets/0.png"
         ]
       }
     }]

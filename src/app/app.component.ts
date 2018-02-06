@@ -9,9 +9,9 @@ import { PromptUpdateService } from './sw-shared-services/prompt-update.service'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(// private swLogUpdate: LogUpdateService,
-               private swCheckUpdate: CheckForUpdateService,
-              // private swPromptUpdate: PromptUpdateService
+  constructor( private swLogUpdate: LogUpdateService,
+              // private swCheckUpdate: CheckForUpdateService,
+              private swPromptUpdate: PromptUpdateService
             ) {}
   title = 'App v1';
 }

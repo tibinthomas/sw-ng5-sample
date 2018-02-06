@@ -6,13 +6,14 @@ export class PromptUpdateService {
 
   constructor(updates: SwUpdate) {
     updates.available.subscribe(event => {
-      if (this.promptUser(event)) {
-        updates.activateUpdate().then(() => document.location.reload(true));
+      console.log(event);
+      if (this.promptUser()) {
+        updates.activateUpdate().then(() => document.location.reload());
       }
     });
   }
 
-  promptUser(event) {
+  promptUser() {
     return confirm('Click Ok to update');
   }
 }

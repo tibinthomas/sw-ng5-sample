@@ -1,7 +1,14 @@
+<a [routerLink]="[{ outlets: { 'sidebar': ['component-aux'] } }]">Component Aux</a>
+
 <a href="" routerLink="/comp1" routerLinkActive="active"> Comp1</a>
 <a href="" routerLink="/comp2" routerLinkActive="active"> Comp2</a>
 <h3>Welcome to {{ title }}!</h3>
 <img width="300" src="/assets/0.png"/><p>Image 0</p>
+<app-fcomp1></app-fcomp1>
 <router-outlet></router-outlet>
 
+<div style="color: green; margin-top: 1rem;">Sidebar Outlet:</div>
+    <div style="border: 2px solid blue; padding: 1rem;">
+      <router-outlet name="sidebar"></router-outlet>
+    </div>
 

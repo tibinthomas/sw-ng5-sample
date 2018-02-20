@@ -15,10 +15,13 @@ import { Comp2Component } from './comp2/comp2/comp2.component';
 
 // Routing
 import { Routes, RouterModule } from '@angular/router';
+import { TestService } from './test.service';
+import { FeatureModule } from './feature/feature.module';
 
 export const routes: Routes = [
   { path: 'comp1', component: Comp1Component },
-  { path: 'comp2', component: Comp2Component }
+  { path: 'comp2', component: Comp2Component },
+  { path: 'component-aux', component: Comp1Component, outlet: 'sidebar' }
 ];
 
 
@@ -31,9 +34,14 @@ export const routes: Routes = [
   imports: [
     BrowserModule,
     ServiceWorkerModule.register('/ngsw-worker.js', {enabled: environment.production}),
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    FeatureModule
   ],
-  providers: [LogUpdateService, CheckForUpdateService, PromptUpdateService],
+  providers: [LogUpdateService, CheckForUpdateService, PromptUpdateService, TestService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private test: TestService) {
+    setInterval(() => console.log(`Console log from Root: ${test.sample}`), 2000);
+  }
+}
